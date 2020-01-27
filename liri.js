@@ -8,7 +8,7 @@ var fs = require("fs");
 
 var spotify = new Spotify(keys.spotify);
 
-var getArtistName = function(artist) {
+var getArtistNames = function(artist) {
     return artist.name;
 };
 
@@ -57,6 +57,8 @@ var getMyBands = function(artist) {
             console.log("upcoming concerts for " + artist + ":");
 
             for(var i = 0; i < jsonData.length; i++) {
+                var show=jsonData[i];
+                
                 console.log(
                     show.venue.city +
                       "," +
